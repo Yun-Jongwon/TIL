@@ -31,9 +31,9 @@
 
 * ctrl+` : 터미널보기
 
-* $ mv *.txt day02/dummy/  :vscode 파일옮기기
+* ctrl+/: 주석처리
 
-* import os
+* $ mv *.txt day02/dummy/  :vscode 파일옮기기
 
 
 
@@ -54,13 +54,15 @@
 
 ### 파일명변경
 
-1.`os.chdir(r'폴더주소')`
+* import os
 
-2.`os.listdir('.')`:현재 working directory의 파일목록리스트
+1. `os.chdir(r'폴더주소')`
 
-3.`os.rename('바꾸려고 하는 원래 이름','바꿀 이름')`
+2. `os.listdir('.')`:현재 working directory의 파일목록리스트
 
+3. `os.rename('바꾸려고 하는 원래 이름','바꿀 이름')`
 
+4. string.replace('바꾸고자 하는 부분','그 부분을 무엇으로 바꿀지')
 
 
 
