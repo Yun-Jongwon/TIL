@@ -62,11 +62,40 @@
 
 3. `os.rename('바꾸려고 하는 원래 이름','바꿀 이름')`
 
-4. string.replace('바꾸고자 하는 부분','그 부분을 무엇으로 바꿀지')
+4. `string.replace('바꾸고자 하는 부분','그 부분을 무엇으로 바꿀지')`
+
+## 크롤링
+
+### 네이버실시간 검색어 크롤링
+
+``` python
+result = soup.select('div.PM_CL_realtimeKeyword_list_base a.ah_a')
+
+for item in result:
+
+    rank = item.select_one('.ah_r').text
+
+    keyword = item.select_one('.ah_k').text
+
+    print(rank + keyword)
+```
 
 
 
+### request 안주는 사이트 크롤링
 
+```python
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'}
+response = requests.get('https://www.melon.com/chart/index.htm',headers=headers).text
+```
+
+
+
+# .text
+
+* BeautifulSoup 에서 활용되는 예쁘게 만들기
+* \<span class="ah_r">17</span>
+* 17 좌우 날리기 위해서
 
 
 
