@@ -83,17 +83,11 @@ total=0
 
 
 for i in score.values() :
-    total+=sum(i.values())     
+    total+=sum(i.values())    
+
 #print(total/6)
 leng=len(score)*len(i.values())
 print(total/leng)
-
-
-
-
-
-
-
 
 
 
@@ -117,6 +111,13 @@ city={
 
 for i in city.keys() :
     print(f'{i} : {sum(city[i])/len(city[i])}도')
+
+
+
+
+for name, temp in city.items():
+    aver=sum(temp)/len(temp)
+    print(f'{name} : {aver}')
 
 
 
