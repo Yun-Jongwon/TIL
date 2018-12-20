@@ -64,29 +64,59 @@ print(total/len(score))
 
 
 # 퀴즈 2 반평균
-score ={'a':{
-    '수학':80,
-    '국어':90,
-    '음악':100
-},'b': {
-    '수학':90,
-    '국어':80,
-    '음악':100
+score ={'a':{'수학':80,'국어':90,'음악':100},
+    
+    
+    'b': { '수학':90,'국어':80,'음악':100}
 }
-}
+
+
+
+
 total=0
 
+#for i in score :
+ #   for key in score[i]:
+  #      total=total+score[i][key]
 
 
 
 
-for i in score :
-    for key in score[i]:
-        total=total+score[i][key]
-    
-leng=len(score)*len(score[i])
+for i in score.values() :
+    total+=sum(i.values())     
+#print(total/6)
+leng=len(score)*len(i.values())
 print(total/leng)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####도시별 최근 3일의 온도
+
+city={
+    '서울':[-6,-10,6],
+    '대전':[-3,-10,6],
+    '광주':[0,-2,10],
+    '구미':[2,-2,9]
+}
+##도시별 최근 3일 의 온도 평균
+
+
+for i in city.keys() :
+    print(f'{i} : {sum(city[i])/len(city[i])}도')
 
 
 
