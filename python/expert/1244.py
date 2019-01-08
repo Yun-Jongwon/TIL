@@ -13,14 +13,15 @@ def changee(tall,count):
             #    return changee(twin,count-1)
             #elif list_to_int(twin)>list_to_int(tall):
                 #tall=twin
-           
+    if count==0:
+
     for i in total:
         return changee(i,count-1)
-
-    result=[]
-    for i in total:
-        result.append(list_to_int(i))
-    return max(result)
+    if len(total)==:
+        result=[]
+        for i in total:
+            result.append(list_to_int(i))
+        return max(result)
 
 
             
