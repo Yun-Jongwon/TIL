@@ -1,26 +1,39 @@
-#for j in range(10):
-money=[]
-tall= str(input())
-num=int(input())
-count=0
-for i in range(num):
-    for j in range(len(tall)):
-        for k in range(i+1,len(tall)):
-            twin=tall
-            temp=twin[j]
-            twin.replace(twin[k],twin[j])
-            twin.replace(twin[k],temp)
-            if int(tall) <int(twin):
-                tall=twin
-    print(tall)
-    
 
+import copy
 
-    if i+1==num:
-        break
+def changee(tall,count):
+    real_tall=copy.deepcopy(tall)
+    total=[]
+    for i in range(len(tall)):
+        for j in range(i+1,len(tall)):
+            twin=copy.deepcopy(real_tall)
+            twin[i],twin[j]=twin[j],twin[i]
+            total.append(twin)
+           # if changee(twin,count-1)>changee(tall,count):
+            #    return changee(twin,count-1)
+            #elif list_to_int(twin)>list_to_int(tall):
+                #tall=twin
+           
+    for i in total:
+        return changee(i,count-1)
 
-print(money)
+    result=[]
+    for i in total:
+        result.append(list_to_int(i))
+    return max(result)
+
 
             
+def list_to_int(lii):
+    result=""
+    for i in lii:
+        result=result+str(i)
+    return(int(result))
 
 
+a,b=input().split()
+tall=[]
+for i in a:
+    tall.append(int(i))
+count=int(b)
+print(changee(tall,count))
