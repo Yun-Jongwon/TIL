@@ -1,4 +1,4 @@
-
+'''
 import copy
 
 def changee(tall,count):
@@ -38,3 +38,4 @@ for i in a:
     tall.append(int(i))
 count=int(b)
 print(changee(tall,count))
+'''
