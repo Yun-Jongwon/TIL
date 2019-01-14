@@ -1,0 +1,134 @@
+<!DOCTYPE html> <!-- doctype 선언부:사용하는 문서의 종류를 선언하는 부분.보통 html을 사용한다-->
+<html lang="ko">
+
+<head> <!--head 요소:문서제목,문자코드와 같이 해당문서정보를 담고잇으며 브라우저에 나타나지 않음. css선언 혹은 외부로딩파일지정등을 작성-->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hi, HTML!!</title>
+    <style>
+        h1{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body> <!--body 요소: 브라우저 화면에 나타나는 정보로 실제 내용에 해당-->
+    <h1>
+        Hi,There!
+    </h1>
+    <h2>
+        Hi,There!
+    </h2>
+    <h3>Hi,There!</h3>
+    <h4>Hi,There!</h4>
+    <h5>Hi,There!</h5>
+    <h6>Hi,There!</h6>
+
+    <b><!-- 글자 굵게-->
+        이것은 굵은 글씨입니다.
+    </b>
+    <strong><!--  strong이 더 권장됨-->
+        이것도 굵은 글씨이지만 semantic입니다.
+    </strong>
+
+    <!-- italic 체-->
+    <i>
+        의미없는 italic
+    </i>
+    <em>
+        semantic체의 italicS입니다.
+    </em>
+
+    <!--highlighted (mark)-->
+    <h2><mark>
+        Marked
+    </mark>.
+    </h2>
+
+    <!--del/ins-->
+    <h2>
+        this is
+        <del>
+            del
+        </del>
+        .
+    </h2>
+
+    <h2>
+        this is
+        <ins>
+            ins
+        </ins>
+        .
+    </h2>
+
+
+    <!--sub/sup-->
+    <h2>this is
+        <sub>
+            sub
+        </sub>.
+    </h2>
+    <h2>
+        this is 
+        <sup>
+            sup
+        </sup>.
+    </h2>
+    <!--p-->
+    <p>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+            this is p tag. <br>
+    </p>
+    <!-- pre (입력과 똑같이 들어감)-->
+    <pre>
+    from import Flask
+    app=Flask(__name__)
+
+    @app.route('/')
+
+    </pre>
+    <!-- hr (줄넣기)-->
+    <hr><hr><hr><hr><hr><h1><hr><hr></h1>
+
+    <!--q/blockquote-->
+    <p>
+        <q>ㅎㅎ</q>
+    </p>
+
+    <blockquote>
+        hello world
+    </blockquote>
+
+    <!-- ol or ul /li  ol 이나 ul 안에 li 써줘야됨(list)-->
+    <ol>
+        <li>일등</li>
+        <li>이등</li>
+        <li>삼등</li>
+        <li>사등</li>
+        <li>오등</li>
+    </ol>
+    <ul>
+            <li>일등</li>
+            <li>이등</li>
+            <li>삼등</li>
+            <li>사등</li>
+            <li>오등</li>   
+     </ul>
+</body>
+</html>
