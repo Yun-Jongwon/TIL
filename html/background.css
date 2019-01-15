@@ -1,0 +1,21 @@
+div{
+    height: 400px;
+}
+
+
+.background-color{
+    background-color: blue;
+}
+.background-image{
+    background-image: url(images/son.jpg);
+    /* background-position: -100px -100px; */
+    background-position: center center;
+    /* background-size: 200px 200px; */
+    /* background-size: cover ->가로 세로중에 큰것에 맞춤 */
+    /* background-size: contain ->가로 세로중에 작은것에 맞춤 */
+    background-size: contain    ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+}

@@ -28,9 +28,35 @@
             /* 박스 사이징box sizing */
             box-sizing:border-box;
         }
+        /* 1.block */
+        /* div,h1~h6,p,ol,ul,table,form */
+        /* 2.inline */
+        /* span, a, strong, em, img, input */
+        /*(주의)width,height,
+            margin-top,margin-bottom 사용 불가능 */
+        /* 3.inline-block(block+inline 속성을 동시에 가지고 있는, 특징을 섞어서 가지고 있음) */
+        /* 4. none */
+        /* 화면에 보이지 않음.(공간 조차 사라짐) */
+        .box2 {
+            border:2px solid red;
+            background-color: gray;
+            display: inline;
+            /* visibility: hidden; */
+            opacity: 0.31;
+        }
+        /* visibility:visible; (기본값) */
+
+
+
     </style>
 </head>
 <body>
+    <div class="box2">
+        이것은 박스2입니다.
+    </div>
+    박스2와 박스 사이입니다.
+
+
     <div class="box">
         이것은 박스입니다.
     </div>
