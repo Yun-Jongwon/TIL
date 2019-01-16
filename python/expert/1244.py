@@ -22,7 +22,7 @@ def changee(tall,count):
         for i in total:
             result.append(list_to_int(i))
         return max(result)
-
+'''
 
             
 def list_to_int(lii):
@@ -35,7 +35,24 @@ def list_to_int(lii):
 a,b=input().split()
 tall=[]
 for i in a:
-    tall.append(int(i))
+    tall.append(i)
 count=int(b)
-print(changee(tall,count))
-'''
+
+result1=[]
+result2=[]
+result3=[]
+for k in range(count):
+
+    for i in range(len(tall)):
+        for j in range(i+1,len(tall)):
+            tall[i],tall[j]=tall[j],tall[i]
+            result1.append(tall)
+            tall[i],tall[j]=tall[j],tall[i]
+        
+        
+
+
+
+
+
+
