@@ -1,57 +1,59 @@
+import copy
+import math
 
+result = []
+dy=[0,1,0,-1]
+dx=[1,0,-1,0]
 def bomb(bom_map,H,W,N):
     stack=[]
     last_N=N-1
-    dy=[0,1,0,-1]
-    dx=[1,0,-1,0]
-    result=[]
     for w in range(W):
+        soon_bom = copy.deepcopy(bom_map)
         for h in range(H):
-            if bom_map[h][w] != 0:
+            if soon_bom[h][w] != 0:
                 stack.append((h,w))
                 break
         while stack !=[]:
             y,x=stack.pop()
-            if bom_map[y][x] > 1:
-                for alpha in range(1,bom_map[y][x]):
+            if soon_bom[y][x] > 1:
+                for alpha in range(1,soon_bom[y][x]):
                     for dir in range(4):
-                        if Issafe(y+dy[dir]*alpha,x+dx[dir]*alpha,H,W) and bom_map[y+dy[dir]*alpha][x+dx[dir]*alpha]>1:
-                            stack.append((y+dy[dir]*alpha,x+dx[dir]*alpha))
-                        else :
-                            bom_map[y+dy[dir]*alpha][x+dx[dir]*alpha]=0
+                        if Issafe(y+dy[dir]*alpha,x+dx[dir]*alpha,H,W):
+                            if soon_bom[y+dy[dir]*alpha][x+dx[dir]*alpha]>1:
+                                stack.append((y+dy[dir]*alpha,x+dx[dir]*alpha))
+                            elif soon_bom[y+dy[dir]*alpha][x+dx[dir]*alpha]==1:
+                                # print(y+dy[dir]*alpha,x+dx[dir]*alpha)
+                                soon_bom[y+dy[dir]*alpha][x+dx[dir]*alpha]=0
 
-                bom_map[y][x]=0
-            elif bom_map[y][x] == 1:
-                bom_map[y][x]=0
+                soon_bom[y][x]=0
+            elif soon_bom[y][x] == 1:
+                soon_bom[y][x]=0
         
 
         ###밑으로내리기
         for result_x in range(W):
             temp=[]
             for result_y in range(-1,-H-1,-1):                
-                if bom_map[result_y][result_x] !=0:
-                    temp.append(bom_map[result_y][result_x])
+                if soon_bom[result_y][result_x] !=0:
+                    temp.append(soon_bom[result_y][result_x])
             for y in range(-1,-H-1,-1):
                 if temp!=[]:
-                    bom_map[y][result_x] = temp.pop(0)
+                    soon_bom[y][result_x] = temp.pop(0)
                 else:
-                    bom_map[y][result_x] = 0
+                    soon_bom[y][result_x] = 0
 
 
 
         if last_N!=0:
-            bomb(bom_map,H,W,N-1)
+            bomb(soon_bom,H,W,N-1)
         else:
             total_sum=0
-            for i in bom_map:
-                total_sum+=sum(i)
+            for i in soon_bom:
+                for j in range(W):
+                    if i[j]!=0:
+                        total_sum+=1
             result.append(total_sum)
-    return min(result)
-            
-        
-
-
-
+        return
 
 
 def Issafe(y,x,h,w):
@@ -68,6 +70,6 @@ for t in range(T):
         w=list(map(int,input().split()))
         total_map.append(w)
     result=[]
-    final=bomb(total_map,H,W,N)
-    print(final)
+    bomb(total_map,H,W,N)
+    print(min(result))
     
