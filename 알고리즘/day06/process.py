@@ -1,15 +1,19 @@
+import sys
+sys.stdin = open('input.txt', 'r')
+
 def dfs(start):
     for p in previous:
         if p[start] == 1:
             p[start] = 0
-    result.append(start)
+    if not start in result:
+        result.append(start)
 
     for i in range(1,V + 1):
         if total_map[start][i] == 1 and sum(previous[i]) == 0:
             dfs(i)
 
 
-for t in range(1):
+for t in range(10):
     V,E=map(int,input().split())
     total_map=[[0]*(V+1) for v in range(V+1)]
     data=list(map(int,input().split()))
@@ -25,7 +29,11 @@ for t in range(1):
         if sum(previous[i])==0:
             start=i
             dfs(start)
-print(result)
+    print(f"#{t+1} ",end="")
+    print(result)
+    for j in result:
+        print(j,end=" ")
+    print()
 
 
 
