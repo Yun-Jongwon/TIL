@@ -1,9 +1,6 @@
 def dfs(couple):
     global m
     global count
-    # if couple==n:
-    #     count+=1
-    #     return
     if sum(visited)==len(visited):
         count+=1
         return
