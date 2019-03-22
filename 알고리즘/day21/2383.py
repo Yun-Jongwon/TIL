@@ -1,6 +1,5 @@
 T=int(input())
 def dfs(yx):
-    print(visit)
     global minimums
     if yx==len(point):
         distance0=[]
@@ -22,11 +21,11 @@ def dfs(yx):
         distance1=sorted(distance1)
 
         for j in range(3,len(distance0)):
-            if totaltime0[j-2]>distance0[j]:
-                totaltime0[j]=totaltime0[j-2]+total_map[stair[0][0]][stair[0][1]]+1
+            if totaltime0[j-3]>distance0[j]:
+                totaltime0[j]=totaltime0[j-3]+total_map[stair[0][0]][stair[0][1]]
         for j in range(3,len(distance1)):
-            if totaltime1[j-2]>distance1[j]:
-                totaltime1[j]=totaltime1[j-2]+total_map[stair[1][0]][stair[1][1]]+1
+            if totaltime1[j-3]>distance1[j]:
+                totaltime1[j]=totaltime1[j-3]+total_map[stair[1][0]][stair[1][1]]
         result=totaltime0+totaltime1
         mini=max(result)
         if mini<minimums:

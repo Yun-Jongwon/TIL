@@ -6,7 +6,6 @@ for t in range(T):
     for n in range(N):
         data+=input()
     result=[]
-    print(data)
     for i in range(-1,-len(data),-1):
         if data[i]=='1':
             j=0
