@@ -9,9 +9,6 @@ def partition(A,L,r):
     return i
 
 
-
-
-
 def quicksort(A,L,r):
     if L<r:
         s=partition(A,L,r)
