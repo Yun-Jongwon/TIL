@@ -38,10 +38,16 @@ while sum(T)!=1:
                 distance[t]=distance[v]+total_map[v][t]
                 p[t]=v
 
-print(p)
+# print(p)
+i=6
+result=[]
+while p[i]!=i:
+    result.append(i)
+    i=p[i]
+result.append(1)
+print(list(reversed(result)))
 
-
-print(distance)
+print(distance[6])
 # 1 2 3 4 5 6
 # 0 3 4 - - -
 
