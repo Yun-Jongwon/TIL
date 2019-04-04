@@ -16,7 +16,7 @@ T=int(input())
 for t in range(T):
     data=list(map(int,input().split()))
     total_station=data[0]
-    charger=data[1::]
+    charger=data[1:]
     start=0
     count=0
     min_count=987654321
