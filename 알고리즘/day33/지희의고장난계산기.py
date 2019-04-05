@@ -3,7 +3,7 @@ def nboon(target,length):
 
 
     global min_len
-    if target==1:
+    if target<=1:
         if length<min_len:
             min_len=length
         return
@@ -23,22 +23,25 @@ def nboon(target,length):
                     flag+=1
                     break
             if flag==0:
-                new_flag=1
-                nboon(i, length + str_len1 + 1)
-                nboon(target//i,length + str_len2 + 1)
+
+                nboon(target//i, length + str_len1 + 1)
+            # else:
+            #     nboon(i,length)
 
             for st in range(str_len2):
                 if calcurator[int(str_target2[st])]!=1:
                     flag+=1
+                    new_flag = 1
                     break
 
             if flag==0 :
                 moment_length=length+2+str_len1+str_len2
                 if moment_length< min_len:
                     min_len = moment_length
-                if new_flag==0:
-                    nboon(i,length+str_len1+1)
-                    nboon(target // i, length + str_len2 + 1)
+            if new_flag==0:
+                nboon(i,length+str_len2+1)
+            # else:
+            #     nboon(target // i, length )
 
 
 T=int(input())
